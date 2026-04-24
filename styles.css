@@ -503,6 +503,22 @@ a { color: inherit; text-decoration: none; }
 }
 @media (max-width: 960px) { .company { grid-template-columns: 1fr; } }
 
+.company + .company { margin-top: clamp(24px, 3vw, 36px); }
+
+.company--reverse { grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr); }
+.company--reverse .company__info { order: 2; }
+.company--reverse .company__preview { order: 1; }
+@media (max-width: 960px) {
+  .company--reverse { grid-template-columns: 1fr; }
+  .company--reverse .company__info { order: 1; }
+  .company--reverse .company__preview { order: 2; }
+}
+
+.company__mark--abr {
+  background: #ff8f5e;
+  color: var(--dark);
+}
+
 .company__badge {
   display: inline-flex;
   align-items: center;
@@ -755,6 +771,99 @@ a { color: inherit; text-decoration: none; }
   background: #efe0b9;
   color: #5a4a1a;
   border-color: #d8c68a;
+}
+
+/* PLACEMENTS (Alpha Bridge Recruiting preview) */
+.placements {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.placement {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-top: 1px solid var(--line);
+  background: #fdfaef;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.placement:first-child { border-top: none; }
+.placement:hover { background: #fbf5e4; transform: translateX(2px); }
+.placement--active {
+  background: #fdefe3;
+  position: relative;
+}
+.placement--active::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--accent);
+}
+
+.flag {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 26px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--cream);
+  background: var(--ink-2);
+}
+.flag--mx { background: linear-gradient(135deg, #006847, #ce1126); }
+.flag--ar { background: linear-gradient(135deg, #74acdf, #274a82); }
+.flag--br { background: linear-gradient(135deg, #009c3b, #fedf00 70%, #002776); color: var(--dark); }
+.flag--co { background: linear-gradient(135deg, #fcd116, #ce1126 55%, #003893); color: var(--dark); }
+.flag--cl { background: linear-gradient(135deg, #0033a0, #ffffff 50%, #d52b1e); color: var(--dark); }
+.flag--uy { background: linear-gradient(135deg, #0038a8, #ffffff); color: var(--dark); }
+
+.placement__who strong,
+.placement__dest strong {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.placement__who small,
+.placement__dest small {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  color: var(--ink-3);
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.placement__arrow {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  color: var(--ink-3);
+}
+.placement__arrow svg { width: 100%; height: 10px; }
+.placement:hover .placement__arrow { color: var(--accent); }
+
+@media (max-width: 520px) {
+  .placement { grid-template-columns: auto minmax(0, 1fr); row-gap: 6px; }
+  .placement__arrow { display: none; }
+  .placement__dest { grid-column: 2 / 3; border-top: 1px dashed var(--line); padding-top: 6px; }
 }
 
 .copilot {
