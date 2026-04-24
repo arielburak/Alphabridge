@@ -826,6 +826,7 @@ a { color: inherit; text-decoration: none; }
 .flag--co { background: linear-gradient(135deg, #fcd116, #ce1126 55%, #003893); color: var(--dark); }
 .flag--cl { background: linear-gradient(135deg, #0033a0, #ffffff 50%, #d52b1e); color: var(--dark); }
 .flag--uy { background: linear-gradient(135deg, #0038a8, #ffffff); color: var(--dark); }
+.flag--us { background: linear-gradient(135deg, #3c3b6e, #b22234); }
 
 .placement__who strong,
 .placement__dest strong {
