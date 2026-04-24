@@ -1,6 +1,6 @@
-# Alpha Bridge Partners
+# Alphabridge Partners
 
-Marketing site for Alpha Bridge Partners — a holding company that develops,
+Marketing site for Alphabridge Partners — a holding company that develops,
 buys, and holds AI-enabled businesses. First portfolio company:
 [recruitingats.com](https://recruitingats.com).
 
